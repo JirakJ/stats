@@ -5,6 +5,7 @@ import {CsvFileReader} from "./interface/CsvFileReader";
 import {ConsoleReport} from "./ConsoleReport";
 import {WinsAnalysis} from "./analyzers/WinsAnalysis";
 import {Summary} from "./Summary";
+import {HtmlReport} from "./HtmlReport";
 
 const reader = new MatchReader('football.csv');
 reader.read();
@@ -43,3 +44,11 @@ const summary = new Summary(
 );
 
 summary.buildAndPrintReport(matchReader.matches);
+
+//Now we can try it with different type of reporter
+const summaryWithHtmlReport = new Summary(
+    new WinsAnalysis('Man United'),
+    new HtmlReport()
+);
+
+summaryWithHtmlReport.buildAndPrintReport(matchReader.matches);
