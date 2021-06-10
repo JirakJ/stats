@@ -2,6 +2,9 @@ import {MatchResult} from "./MatchResultsEnum";
 import {MatchReader} from "./inheritance/MatchReader";
 import {MatchReader as InterfacedMatchReader} from "./interface/MatchReader";
 import {CsvFileReader} from "./interface/CsvFileReader";
+import {ConsoleReport} from "./ConsoleReport";
+import {WinsAnalysis} from "./analyzers/WinsAnalysis";
+import {Summary} from "./Summary";
 
 const reader = new MatchReader('football.csv');
 reader.read();
@@ -32,3 +35,11 @@ for(let match of matchReader.matches){
 }
 
 console.log(`Man United won ${manUnitedWins} games`)
+
+//Example of composition approach (class Summary), heavy duty is on helper classes
+const summary = new Summary(
+    new WinsAnalysis('Man United'),
+    new ConsoleReport()
+);
+
+summary.buildAndPrintReport(matchReader.matches);
