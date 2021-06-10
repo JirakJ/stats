@@ -1,7 +1,4 @@
-import {MatchReader} from "./MatchReader";
 import fs from "fs";
-import {dateStringToDate} from "../utils";
-import {MatchResult} from "../MatchResultsEnum";
 
 export class CsvFileReader {
     data: string[][] = [];

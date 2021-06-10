@@ -1,9 +1,7 @@
 import fs from 'fs';
 import {dateStringToDate} from "../utils";
 import {MatchResult} from "../MatchResultsEnum";
-
-//Use Tuple for defining new type
-type MatchData = [Date, string, string, number, number,MatchResult,string];
+import {MatchData} from "../MatchData";
 
 export class CsvFileReader {
     data: MatchData[] = [];
