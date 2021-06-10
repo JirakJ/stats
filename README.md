@@ -1,4 +1,6 @@
 # stats
-# stats
-# stats
-# stats
+    
+    npm install
+    npm start
+    
+check your terminal for output :)
