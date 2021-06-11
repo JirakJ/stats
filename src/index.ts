@@ -46,9 +46,7 @@ const summary = new Summary(
 summary.buildAndPrintReport(matchReader.matches);
 
 //Now we can try it with different type of reporter
-const summaryWithHtmlReport = new Summary(
-    new WinsAnalysis('Man United'),
-    new HtmlReport()
-);
+//Use static method winsAnalysisWithHtmlReport to make init shorter
+const summaryWithHtmlReport = Summary.winsAnalysisWithHtmlReport("Man United")
 
 summaryWithHtmlReport.buildAndPrintReport(matchReader.matches);
